@@ -1,0 +1,53 @@
+//
+//  FishViewController.swift
+//  FishToxcity
+//
+//  Created by Yaoyu Yang on 11/23/15.
+//  Copyright © 2015 Yaoyu Yang. All rights reserved.
+//
+
+import UIKit
+
+class FishViewController: UIViewController {
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var fishLabel: UILabel!
+    @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var eatingGuide: UILabel!
+    
+    /*
+    This value is passed by `FishTableViewController` in `prepareForSegue(_:sender:)`
+    */
+    var fish: Fish?
+    var fishToxicGuide: [String] = ["LEAST MERCURY", "MODERATE MERCURY", "HIGH MERCURY", "HIGHEST MERCURY"]
+    var eatingGuideText: [String] = ["Enjoy this fish", "Eat six servings or less per month", "Eat three servings or less per month", "Avoid eating"]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Set up views if editing an existing Meal.
+        if let fish = fish {
+            navigationItem.title = fish.name
+            photoImageView.image = fish.photo
+            fishLabel.text = fishToxicGuide[fish.level]
+            eatingGuide.text = eatingGuideText[fish.level]
+            ratingControl.rating = fish.level
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Navigation
+    @IBAction func back(sender: UIBarButtonItem) {
+        navigationController!.popViewControllerAnimated(true)
+
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
+
+
+}
+
