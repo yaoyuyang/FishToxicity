@@ -15,6 +15,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
     var fishes = [Fish]()
     var filteredFishes = [Fish]()
     var resultSearchController = UISearchController()
+    let ratingImageNames: [String] = ["least", "moderate", "high", "highest"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +81,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
 
         cell.nameLabel.text = aFish.name
         cell.photoImageView.image = aFish.photo
+        cell.ratingImage.image = UIImage(named: ratingImageNames[aFish.level])!
 
         return cell
     }

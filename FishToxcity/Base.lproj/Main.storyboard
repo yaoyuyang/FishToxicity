@@ -19,35 +19,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-nb-bSw">
-                                <rect key="frame" x="20" y="80" width="560" height="681"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-nb-bSw">
+                                <rect key="frame" x="20" y="80" width="560" height="843"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercury Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kg-a8-nGS">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="239" placeholderIntrinsicHeight="150" image="least" translatesAutoresizingMaskIntoConstraints="NO" id="uZ0-yL-mvO">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="150"/>
+                                        <animations/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mercury Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kg-a8-nGS">
+                                        <rect key="frame" x="0.0" y="162" width="560" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view userInteractionEnabled="NO" contentMode="center" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-We-YeO" customClass="RatingControl" customModule="FishToxicity" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="33" width="560" height="44"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eating Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-de-2aL">
-                                        <rect key="frame" x="0.0" y="89" width="560" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Eating Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-de-2aL">
+                                        <rect key="frame" x="0.0" y="195" width="560" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-Zw-DTh">
-                                        <rect key="frame" x="0.0" y="121" width="560" height="560"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-Zw-DTh">
+                                        <rect key="frame" x="0.0" y="227" width="560" height="560"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bPO-Zw-DTh" secondAttribute="height" multiplier="1:1" id="1iA-Yw-bNn"/>
                                         </constraints>
                                     </imageView>
+                                    <view userInteractionEnabled="NO" contentMode="center" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-We-YeO" customClass="RatingControl" customModule="FishToxicity" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="799" width="560" height="44"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <animations/>
                             </stackView>
@@ -73,6 +77,7 @@
                         <outlet property="fishLabel" destination="1Kg-a8-nGS" id="cdF-eO-q5u"/>
                         <outlet property="photoImageView" destination="bPO-Zw-DTh" id="GUz-yS-xS0"/>
                         <outlet property="ratingControl" destination="LdN-We-YeO" id="yf0-Ly-4DG"/>
+                        <outlet property="ratingImage" destination="uZ0-yL-mvO" id="RCJ-B8-BB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,18 +105,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-cQ-Nbh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Butterfish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-cQ-Nbh">
                                             <rect key="frame" x="68" y="0.0" width="503" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYV-hO-tU7">
-                                            <rect key="frame" x="68" y="23" width="218" height="32"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moderate" translatesAutoresizingMaskIntoConstraints="NO" id="XBX-Ye-8vN">
+                                            <rect key="frame" x="60" y="25" width="60" height="34"/>
                                             <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -119,6 +123,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="6o6-cQ-Nbh" id="BS0-f5-hFX"/>
                                     <outlet property="photoImageView" destination="clW-Bn-0jf" id="rNu-g3-aLY"/>
+                                    <outlet property="ratingImage" destination="XBX-Ye-8vN" id="0d7-Wz-hR5"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="dTg-HQ-5zN"/>
                                 </connections>
                             </tableViewCell>
@@ -175,6 +180,8 @@
     </scenes>
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>
+        <image name="least" width="851" height="315"/>
+        <image name="moderate" width="641" height="322"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dTg-HQ-5zN"/>

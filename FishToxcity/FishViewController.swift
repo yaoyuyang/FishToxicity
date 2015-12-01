@@ -14,13 +14,15 @@ class FishViewController: UIViewController {
     @IBOutlet weak var fishLabel: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var eatingGuide: UILabel!
+    @IBOutlet weak var ratingImage: UIImageView!
     
     /*
     This value is passed by `FishTableViewController` in `prepareForSegue(_:sender:)`
     */
     var fish: Fish?
-    var fishToxicGuide: [String] = ["LEAST MERCURY", "MODERATE MERCURY", "HIGH MERCURY", "HIGHEST MERCURY"]
-    var eatingGuideText: [String] = ["Enjoy this fish", "Eat six servings or less per month", "Eat three servings or less per month", "Avoid eating"]
+    let fishToxicGuide: [String] = ["LEAST MERCURY", "MODERATE MERCURY", "HIGH MERCURY", "HIGHEST MERCURY"]
+    let eatingGuideText: [String] = ["Enjoy this fish", "Eat six servings or less per month", "Eat three servings or less per month", "Avoid eating"]
+    let ratingImageNames: [String] = ["least", "moderate", "high", "highest"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class FishViewController: UIViewController {
             fishLabel.text = fishToxicGuide[fish.level]
             eatingGuide.text = eatingGuideText[fish.level]
             ratingControl.rating = fish.level
+            ratingImage.image = UIImage(named: ratingImageNames[fish.level])!
         }
     }
 
