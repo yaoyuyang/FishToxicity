@@ -26,6 +26,9 @@ class FishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set up views if editing an existing Meal.
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        rightSwipe.direction = .Right
+        view.addGestureRecognizer(rightSwipe)
         if let fish = fish {
             navigationItem.title = fish.name
             photoImageView.image = fish.photo
@@ -47,6 +50,12 @@ class FishViewController: UIViewController {
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+    }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Right) {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
 
 
