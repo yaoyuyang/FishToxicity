@@ -39,7 +39,10 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
         let catfish = Fish(name: "Catfish", photo: UIImage(named: "Catfish")!, level: 0)!
         let clam = Fish(name: "Clam", photo: UIImage(named: "Clam")!, level: 0)!
         let marlin = Fish(name: "Marlin", photo: UIImage(named: "Marlin")!, level: 3)!
-        fishes += [anchovies, butterfish, catfish, clam, marlin]
+        let bass = Fish(name: "Bass (Striped, Black)", photo: UIImage(named: "Bass")!, level: 1)!
+        let blueFish = Fish(name: "Bluefish", photo: UIImage(named: "Bluefish")!, level: 2)!
+        fishes += [anchovies, butterfish, catfish, clam, marlin, bass, blueFish]
+        fishes.sortInPlace({ $0.name < $1.name })
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,7 +12,6 @@ class FishViewController: UIViewController {
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var fishLabel: UILabel!
-    @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var eatingGuide: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
     
@@ -32,7 +31,6 @@ class FishViewController: UIViewController {
             photoImageView.image = fish.photo
             fishLabel.text = fishToxicGuide[fish.level]
             eatingGuide.text = eatingGuideText[fish.level]
-            ratingControl.rating = fish.level
             ratingImage.image = UIImage(named: ratingImageNames[fish.level])!
         }
     }

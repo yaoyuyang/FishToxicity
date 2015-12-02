@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -15,43 +14,45 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-nb-bSw">
-                                <rect key="frame" x="20" y="80" width="560" height="843"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-JW-KRc">
+                                <rect key="frame" x="20" y="79" width="560" height="405"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="239" placeholderIntrinsicHeight="150" image="least" translatesAutoresizingMaskIntoConstraints="NO" id="uZ0-yL-mvO">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="150"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="145" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mvN-6j-GYp">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="100" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZPb-Rf-J5y">
+                                                <rect key="frame" x="0.0" y="0.0" width="278" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" text="Mercury Level" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="1Kg-a8-nGS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" text="Eating Guide: Eat three servings or less per month:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-de-2aL">
+                                                        <rect key="frame" x="0.0" y="40" width="278" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="least" translatesAutoresizingMaskIntoConstraints="NO" id="uZ0-yL-mvO">
+                                                <rect key="frame" x="283" y="0.0" width="277" height="70"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Marlin" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-Zw-DTh">
+                                        <rect key="frame" x="0.0" y="85" width="560" height="320"/>
                                         <animations/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mercury Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kg-a8-nGS">
-                                        <rect key="frame" x="0.0" y="162" width="560" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Eating Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-de-2aL">
-                                        <rect key="frame" x="0.0" y="195" width="560" height="20"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-Zw-DTh">
-                                        <rect key="frame" x="0.0" y="227" width="560" height="560"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="bPO-Zw-DTh" secondAttribute="height" multiplier="1:1" id="1iA-Yw-bNn"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view userInteractionEnabled="NO" contentMode="center" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-We-YeO" customClass="RatingControl" customModule="FishToxicity" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="799" width="560" height="44"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                                 <animations/>
                             </stackView>
@@ -59,9 +60,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="sg4-nb-bSw" secondAttribute="trailing" id="88Q-yi-q79"/>
-                            <constraint firstItem="sg4-nb-bSw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dkn-hM-Ui6"/>
-                            <constraint firstItem="sg4-nb-bSw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="e45-iF-h6w"/>
+                            <constraint firstItem="zQe-JW-KRc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="76s-ME-kgC"/>
+                            <constraint firstItem="zQe-JW-KRc" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Kzz-3c-hIg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zQe-JW-KRc" secondAttribute="trailing" id="ZyY-gO-D9r"/>
+                            <constraint firstItem="zQe-JW-KRc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="dF7-Qp-DpS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fish Detail" id="LG3-2O-2LK">
@@ -76,13 +78,12 @@
                         <outlet property="eatingGuide" destination="Bha-de-2aL" id="BZ6-Ia-flL"/>
                         <outlet property="fishLabel" destination="1Kg-a8-nGS" id="cdF-eO-q5u"/>
                         <outlet property="photoImageView" destination="bPO-Zw-DTh" id="GUz-yS-xS0"/>
-                        <outlet property="ratingControl" destination="LdN-We-YeO" id="yf0-Ly-4DG"/>
                         <outlet property="ratingImage" destination="uZ0-yL-mvO" id="RCJ-B8-BB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3157" y="241"/>
+            <point key="canvasLocation" x="2597" y="273"/>
         </scene>
         <!--Fish Toxicity Checker-->
         <scene sceneID="uo7-jP-OrO">
@@ -101,7 +102,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="clW-Bn-0jf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="clW-Bn-0jf">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <animations/>
                                         </imageView>
@@ -113,7 +114,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moderate" translatesAutoresizingMaskIntoConstraints="NO" id="XBX-Ye-8vN">
-                                            <rect key="frame" x="60" y="25" width="60" height="34"/>
+                                            <rect key="frame" x="80" y="25" width="60" height="34"/>
                                             <animations/>
                                         </imageView>
                                     </subviews>
@@ -179,9 +180,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Marlin" width="512" height="173"/>
         <image name="defaultPhoto" width="540" height="540"/>
         <image name="least" width="851" height="315"/>
-        <image name="moderate" width="641" height="322"/>
+        <image name="moderate" width="639" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dTg-HQ-5zN"/>
