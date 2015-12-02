@@ -85,6 +85,8 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
         cell.nameLabel.text = aFish.name
         cell.photoImageView.image = aFish.photo
         cell.ratingImage.image = UIImage(named: ratingImageNames[aFish.level])!
+        
+        self.definesPresentationContext = true
 
         return cell
     }
@@ -142,8 +144,13 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
         let fishDetailViewController = segue.destinationViewController as! FishViewController
         // Get the cell that generated this segue.
         if let selectedFishCell = sender as? FishTableViewCell {
+            var selectedFish: Fish?
             let indexPath = tableView.indexPathForCell(selectedFishCell)!
-            let selectedFish = fishes[indexPath.row]
+            if (self.resultSearchController.active) {
+                selectedFish = filteredFishes[indexPath.row]
+            } else {
+                selectedFish = fishes[indexPath.row]
+            }
             fishDetailViewController.fish = selectedFish
         }
     }

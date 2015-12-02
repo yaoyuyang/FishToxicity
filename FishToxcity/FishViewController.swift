@@ -14,6 +14,7 @@ class FishViewController: UIViewController {
     @IBOutlet weak var fishLabel: UILabel!
     @IBOutlet weak var eatingGuide: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
+
     
     /*
     This value is passed by `FishTableViewController` in `prepareForSegue(_:sender:)`
