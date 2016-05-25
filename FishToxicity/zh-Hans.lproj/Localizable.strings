@@ -1,0 +1,82 @@
+/* 
+  Localizable.strings
+  FishToxicity
+
+  Created by Yaoyu Yang on 5/21/16.
+  Copyright © 2016 Yaoyu Yang. All rights reserved.
+*/
+
+"LEAST MERCURY" = "低含汞量";
+"MODERATE MERCURY" = "中含汞量";
+"HIGH MERCURY" = "高含汞量";
+"HIGHEST MERCURY" = "极高含汞量";
+"Enjoy this fish.*" = "尽情享用*";
+"Eat six servings or less per month.*" = "每个月吃六份以下!*";
+"Eat three servings or less per month!*" = "每个月吃三份以下!*";
+"Avoid eating!*" = "避免食用!*";
+"Mercury concentration mean: " = "汞含量平均值: ";
+" PPM, according to FDA: Mercury Levels in Commercial Fish and Shellfish (1990-2010). " = " PPM, 数据来源美国FDA: 商业鱼类和贝类的汞含量 (1990-2010)。";
+"Anchovies" = "小公鱼";
+"Bass (Saltwater, Black, Striped)" = "银花鲈鱼";
+"Bluefish" = "扁鲹 (蓝鱼, 蓝鯥)";
+"Butterfish" = "三刺低鳍鲳";
+"Buffalofish" = "水牛鱼";
+"Carp" = "鲤鱼";
+"Catfish" = "鲶鱼";
+"Clam" = "蛤蜊";
+"Cod (Alaskan)" = "阿拉斯加鳕鱼";
+"Crab (Blue, King, Snow)" = "蟹";
+"Crawfish (Crayfish)" = "小龙虾";
+"Croaker (Atlantic)" = "黄花鱼（大西洋）";
+"Croaker (White Pacific)" = "黄花鱼（太平洋）";
+"Flounder" = "比目鱼";
+"Grouper" = "石斑鱼";
+"Haddock (Atlantic)" = "黑线鳕（大西洋）";
+"Hake" = "太平洋无须鳕/太平洋白鱼";
+"Halibut" = "狭鳞庸鲽";
+"Herring" = "鲱鱼";
+"Jacksmelt (Silverside)" = "银汉鱼";
+"Lobster (Spiny)" = "龙虾（刺）";
+"Lobster (Northern American)" = "龙虾（北美）";
+"Mackerel (King)" = "鲭鱼/青花鱼";
+"Mackerel Chub (Pacific)" = "太平洋鲭鱼";
+"Mackerel (N. Atlantic)" = "大西洋鲭鱼";
+"Mackerel Spanish (S. Atlantic)" = "马鲛鱼（大西洋种）";
+"Mackerel Spanish (Gulf of Mexico)" = "马鲛鱼（墨西哥海湾种）";
+"Marlin" = "旗魚/马林鱼";
+"Monkfish" = "安康鱼";
+"Mullet" = "鲻鱼/乌鱼";
+"Orange Roughy" = "红狮子鱼";
+"Oyster" = "牡蛎";
+"Perch (Freshwater)" = "鲈鱼（淡水）";
+"Perch (Ocean)" = "鲈鱼（海洋）";
+"Plaice" = "高眼鲽";
+"Pollock" = "绿青鳕";
+"Sablefish" = "裸盖鱼／银鳕鱼";
+"Salmon (Canned)" = "罐头三文鱼";
+"Salmon (Fresh)" = "三文鱼";
+"Sardine" = "沙丁鱼";
+"Scallop" = "扇贝";
+"Scorpionfish" = "石头鲈";
+"Chilean Seabass (Patagonian toothfish)" = "小鳞犬牙南极鱼";
+"Shad (American)" = "鲥鱼";
+"Shark" = "鲨鱼";
+"Sheepshead" = "鲷鱼类，羊头鱼";
+"Shrimp" = "虾";
+"Skate" = "鳐鱼/魔鬼鱼";
+"Snapper" = "龙利鱼";
+"Sole (Pacific)" = "鲽鱼";
+"Squid (Calamari)" = "鱿鱼";
+"Swordfish" = "剑鱼";
+"Tilapia" = "罗非鱼";
+"Tilefish (Atlantic)" = "方头鱼 (大西洋）";
+"Tilefish (Gulf of Mexico)" = "方头鱼（墨西哥湾）";
+"Trout (Freshwater)" = "鳟鱼";
+"Tuna (Bigeye, Ahi)" = "大眼金枪鱼";
+"Tuna (Canned Albacore)" = "罐装白金枪鱼";
+"Tuna (Canned light)" = "罐装金枪鱼";
+"Tuna (Skipjack)" = "鲣鱼/柴鱼";
+"Tuna (Yellowfin)" = "黄鳍金枪鱼";
+"Weakfish (Sea Trout)" = "海鳟";
+"Whitefish" = "白鱼";
+"Whiting" = "牙鳕";

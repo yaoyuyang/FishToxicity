@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Localize-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FishToxicity.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B1C311524D7D3A1D1D67B0774F7E3A01</key>
+		<key>08060E99CEFC23A788F6F45E27C5B38C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E3BBCA6078A6AAAD053C911572F0B0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

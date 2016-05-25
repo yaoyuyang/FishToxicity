@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "02E86DE54063D9EAC34CC324E31DDB2449B3F121",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "02E86DE54063D9EAC34CC324E31DDB2449B3F121" : 0,
+    "559B52876841C4363E7298926E1DA9AB3FA7C2E9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FBBCA45F-3288-4D50-B452-481196CD5AE1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "02E86DE54063D9EAC34CC324E31DDB2449B3F121" : "FishToxicity\/",
+    "559B52876841C4363E7298926E1DA9AB3FA7C2E9" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FishToxicity",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FishToxicity.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sunshineyyy\/FishToxicity.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "02E86DE54063D9EAC34CC324E31DDB2449B3F121"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sunshineyyy\/CatchOneBus",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "559B52876841C4363E7298926E1DA9AB3FA7C2E9"
+    }
+  ]
+}

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Localize_Swift
 
 class FishViewController: UIViewController {
     
@@ -26,13 +27,14 @@ class FishViewController: UIViewController {
     let singleAttribute1 = [ NSForegroundColorAttributeName: UIColor.greenColor() ]
     let singleAttribute2 = [ NSBackgroundColorAttributeName: UIColor.yellowColor() ]
     let singleAttribute3 = [ NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleDouble.rawValue ]
+    
     let fishToxicGuide: [NSAttributedString] = [
-        NSAttributedString(string: "LEAST MERCURY", attributes: [ NSForegroundColorAttributeName: UIColor(red: 88/255, green: 152/255, blue: 42/255, alpha: 1) ]),
-        NSAttributedString(string: "MODERATE MERCURY", attributes: [ NSForegroundColorAttributeName: UIColor(red: 234/255, green: 203/255, blue: 0/255, alpha: 1) ]),
-        NSAttributedString(string: "HIGH MERCURY", attributes: [ NSForegroundColorAttributeName: UIColor(red: 255/255, green: 171/255, blue: 28/255, alpha: 1) ]),
-        NSAttributedString(string: "HIGHEST MERCURY", attributes: [ NSForegroundColorAttributeName: UIColor(red: 254/255, green: 72/255, blue: 25/255, alpha: 1) ])
+        NSAttributedString(string: "LEAST MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 88/255, green: 152/255, blue: 42/255, alpha: 1) ]),
+        NSAttributedString(string: "MODERATE MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 234/255, green: 203/255, blue: 0/255, alpha: 1) ]),
+        NSAttributedString(string: "HIGH MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 255/255, green: 171/255, blue: 28/255, alpha: 1) ]),
+        NSAttributedString(string: "HIGHEST MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 254/255, green: 72/255, blue: 25/255, alpha: 1) ])
     ]
-    let eatingGuideText: [String] = ["Enjoy this fish.*", "Eat six servings or less per month.*", "Eat three servings or less per month!*", "Avoid eating!*"]
+    let eatingGuideText: [String] = ["Enjoy this fish.*".localized(), "Eat six servings or less per month.*".localized(), "Eat three servings or less per month!*".localized(), "Avoid eating!*".localized()]
     let ratingImageNames: [String] = ["least", "moderate", "high", "highest"]
 
     override func viewDidLoad() {
@@ -47,7 +49,7 @@ class FishViewController: UIViewController {
             fishLabel.attributedText = fishToxicGuide[fish.level]
             eatingGuide.text = eatingGuideText[fish.level]
             ratingImage.image = UIImage(named: ratingImageNames[fish.level])!
-            concData.text = "Mercury concentration mean: " + fish.conc!.description + " PPM, according to FDA: Mercury Levels in Commercial Fish and Shellfish (1990-2010). "
+            concData.text = "Mercury concentration mean: ".localized() + fish.conc!.description + " PPM, according to FDA: Mercury Levels in Commercial Fish and Shellfish (1990-2010). ".localized()
         }
 //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
 //        bannerView.rootViewController = self

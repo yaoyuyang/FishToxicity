@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  FishToxicity
+
+  Created by Yaoyu Yang on 5/21/16.
+  Copyright © 2016 Yaoyu Yang. All rights reserved.
+*/
+
+"LEAST MERCURY" = "LEAST MERCURY";
+"MODERATE MERCURY" = "MODERATE MERCURY";
+"HIGH MERCURY" = "HIGH MERCURY";
+"HIGHEST MERCURY" = "HIGHEST MERCURY";
+"Enjoy this fish.*" = "Enjoy this fish.*";
+"Eat six servings or less per month.*" = "Eat six servings or less per month.*";
+"Eat three servings or less per month!*" = "Eat three servings or less per month!*";
+"Avoid eating!*" = "Avoid eating!*";
+"Mercury concentration mean: " = "Mercury concentration mean: ";
+" PPM, according to FDA: Mercury Levels in Commercial Fish and Shellfish (1990-2010). " = " PPM, according to FDA: Mercury Levels in Commercial Fish and Shellfish (1990-2010). ";

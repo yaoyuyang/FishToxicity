@@ -23,6 +23,7 @@
 		6DF81E4E1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */; };
 		6DF81E4F1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */; };
 		6DF81E501CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */; };
+		6DF81E571CF10D71005BB820 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E591CF10D71005BB820 /* Localizable.strings */; };
 		D8E9181ECBBC87ED19847AA9 /* Pods_FishToxicity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F942B4A400D2EF2452D7C /* Pods_FishToxicity.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,14 @@
 		6DEC12CA1C0423AB00E719A8 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		6DEC12CD1C04327F00E719A8 /* FishTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishTableViewController.swift; sourceTree = "<group>"; };
 		6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DF81E511CF10485005BB820 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6DF81E521CF10485005BB820 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6DF81E531CF1048C005BB820 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		6DF81E541CF1048C005BB820 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6DF81E581CF10D71005BB820 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DF81E5A1CF10D7A005BB820 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DF81E5B1CF10D7C005BB820 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DF81E5C1CF11531005BB820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		91C01F5B0AD77F5617BC42D4 /* Pods-FishToxicity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishToxicity.release.xcconfig"; path = "Pods/Target Support Files/Pods-FishToxicity/Pods-FishToxicity.release.xcconfig"; sourceTree = "<group>"; };
 		B8799340B577F9A5BE803276 /* Pods-FishToxicity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishToxicity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FishToxicity/Pods-FishToxicity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +151,7 @@
 				6DE31D681C030AD50007E50E /* AppDelegate.swift */,
 				6DE31D6A1C030AD50007E50E /* FishViewController.swift */,
 				6DE31D6C1C030AD50007E50E /* Main.storyboard */,
+				6DF81E591CF10D71005BB820 /* Localizable.strings */,
 				6DEC12CD1C04327F00E719A8 /* FishTableViewController.swift */,
 				6DE31D881C030E8A0007E50E /* FishTableViewCell.swift */,
 				6DEC12CA1C0423AB00E719A8 /* Fish.swift */,
@@ -263,6 +273,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 6DE31D5C1C030AD50007E50E;
 			productRefGroup = 6DE31D661C030AD50007E50E /* Products */;
@@ -282,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE31D731C030AD50007E50E /* LaunchScreen.storyboard in Resources */,
+				6DF81E571CF10D71005BB820 /* Localizable.strings in Resources */,
 				6DE31D701C030AD50007E50E /* Assets.xcassets in Resources */,
 				6DF81E4E1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */,
 				6D67070E1C128886004B1DB2 /* fishdata.csv in Resources */,
@@ -406,6 +419,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6DE31D6D1C030AD50007E50E /* Base */,
+				6DF81E511CF10485005BB820 /* zh-Hans */,
+				6DF81E531CF1048C005BB820 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -414,8 +429,21 @@
 			isa = PBXVariantGroup;
 			children = (
 				6DE31D721C030AD50007E50E /* Base */,
+				6DF81E521CF10485005BB820 /* zh-Hans */,
+				6DF81E541CF1048C005BB820 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6DF81E591CF10D71005BB820 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DF81E581CF10D71005BB820 /* en */,
+				6DF81E5A1CF10D7A005BB820 /* zh-Hans */,
+				6DF81E5B1CF10D7C005BB820 /* zh-Hant */,
+				6DF81E5C1CF11531005BB820 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -518,6 +546,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaoyuyang.app.FishToxicity;
 				PRODUCT_NAME = FishToxicity;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -535,6 +564,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaoyuyang.app.FishToxicity;
 				PRODUCT_NAME = FishToxicity;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

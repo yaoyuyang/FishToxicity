@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Mercury Level"; ObjectID = "1Kg-a8-nGS"; */
+"1Kg-a8-nGS.text" = "Mercury Level";
+
+/* Class = "UILabel"; text = "Butterfish"; ObjectID = "6o6-cQ-Nbh"; */
+"6o6-cQ-Nbh.text" = "Butterfish";
+
+/* Class = "UILabel"; text = "Eating Guide: Eat three servings or less per month"; ObjectID = "Bha-de-2aL"; */
+"Bha-de-2aL.text" = "Eating Guide: Eat three servings or less per month";
+
+/* Class = "UINavigationItem"; title = "Fish Detail"; ObjectID = "LG3-2O-2LK"; */
+"LG3-2O-2LK.title" = "Fish Detail";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "auK-Ld-sdK"; */
+"auK-Ld-sdK.title" = "Back";
+
+/* Class = "UILabel"; text = "*Eating guide based on a 6oz serving of cooked fish for a 130lb/60kg woman, source from NRDC: Consumer Guide to Mercury in Fish."; ObjectID = "bvC-qG-brO"; */
+"bvC-qG-brO.text" = "*食用指南針對於60kg的女子，每一份魚重量按照約170g, 來源於NRDC: 魚類含汞量的消費者指南。";
+
+/* Class = "UINavigationItem"; title = "Fish Toxicity Level"; ObjectID = "loP-7A-4G1"; */
+"loP-7A-4G1.title" = "食用魚類汞含量";
+
+/* Class = "UILabel"; text = "Mercury conc data"; ObjectID = "u1g-VE-Vlp"; */
+"u1g-VE-Vlp.text" = "汞含量數據";

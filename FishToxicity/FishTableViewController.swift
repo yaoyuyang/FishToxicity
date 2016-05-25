@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Localize_Swift
 //import SwiftCSV
 
 class FishTableViewController: UITableViewController, UISearchResultsUpdating, GADInterstitialDelegate {
@@ -130,7 +131,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
             if let processedItems = parseCSV(contentsOfURL, encoding: NSUTF8StringEncoding, error: &error) {
                 for processedItem in processedItems {
 //                    print(processedItem)
-                    let newFish = Fish(name: processedItem["name"]!, photo: UIImage(named: processedItem["photo"]!), level: Int(processedItem["level"]!)!, conc: Float(processedItem["concentration"]!))!
+                    let newFish = Fish(name: processedItem["name"]!.localized(), photo: UIImage(named: processedItem["photo"]!), level: Int(processedItem["level"]!)!, conc: Float(processedItem["concentration"]!))!
                     fishes.append(newFish)
                 }
             }
@@ -259,7 +260,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3465836150410679/1667028149")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         interstitial.delegate = self
         interstitial.loadRequest(GADRequest())
         return interstitial
