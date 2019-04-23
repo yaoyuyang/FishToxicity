@@ -24,9 +24,9 @@ class FishViewController: UIViewController {
     */
     
     var fish: Fish?
-    let singleAttribute1 = [ NSForegroundColorAttributeName: UIColor.greenColor() ]
-    let singleAttribute2 = [ NSBackgroundColorAttributeName: UIColor.yellowColor() ]
-    let singleAttribute3 = [ NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleDouble.rawValue ]
+    let singleAttribute1 = [ NSForegroundColorAttributeName: UIColor.green ]
+    let singleAttribute2 = [ NSBackgroundColorAttributeName: UIColor.yellow ]
+    let singleAttribute3 = [ NSUnderlineStyleAttributeName: NSUnderlineStyle.styleDouble.rawValue ]
     
     let fishToxicGuide: [NSAttributedString] = [
         NSAttributedString(string: "LEAST MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 88/255, green: 152/255, blue: 42/255, alpha: 1) ]),
@@ -41,7 +41,7 @@ class FishViewController: UIViewController {
         super.viewDidLoad()
         // Set up views if editing an existing Meal.
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FishViewController.handleSwipes(_:)))
-        rightSwipe.direction = .Right
+        rightSwipe.direction = .right
         view.addGestureRecognizer(rightSwipe)
         if let fish = fish {
             navigationItem.title = fish.name
@@ -62,17 +62,17 @@ class FishViewController: UIViewController {
     }
     
     // MARK: Navigation
-    @IBAction func back(sender: UIBarButtonItem) {
-        navigationController!.popViewControllerAnimated(true)
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        navigationController!.popViewController(animated: true)
 
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
     
-    func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .Right) {
-            navigationController!.popViewControllerAnimated(true)
+    func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .right) {
+            navigationController!.popViewController(animated: true)
         }
     }
 
