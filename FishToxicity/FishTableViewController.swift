@@ -94,7 +94,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
                         } else  {
                             values = line.components(separatedBy: delimiter)
                         }
-                        print(values)
+
                         if values.count < keys.count {
                             values.append("")
                         }
