@@ -1,42 +1,54 @@
 PODS:
-  - Firebase (3.2.0):
-    - Firebase/Core (= 3.2.0)
-  - Firebase/AdMob (3.2.0):
-    - Firebase/Analytics (= 3.2.0)
-    - Google-Mobile-Ads-SDK (= 7.8.1)
-  - Firebase/Analytics (3.2.0):
-    - FirebaseAnalytics (= 3.2.0)
-  - Firebase/Core (3.2.0):
-    - Firebase/Analytics (= 3.2.0)
-  - FirebaseAnalytics (3.2.0):
-    - FirebaseInstanceID (~> 1.0)
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
-    - GoogleUtilities (~> 1.3)
-  - FirebaseInstanceID (1.0.6)
-  - Google-Mobile-Ads-SDK (7.8.1)
-  - GoogleInterchangeUtilities (1.2.1):
-    - GoogleSymbolUtilities (~> 1.0)
-  - GoogleSymbolUtilities (1.1.1)
-  - GoogleUtilities (1.3.1):
-    - GoogleSymbolUtilities (~> 1.0)
+  - Google-Mobile-Ads-SDK (7.43.0):
+    - GoogleAppMeasurement (~> 5.7)
+  - GoogleAppMeasurement (5.8.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.7.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.7.0)
+  - GoogleUtilities/Logger (5.7.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.7.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.7.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.7.0)"
+  - GoogleUtilities/Reachability (5.7.0):
+    - GoogleUtilities/Logger
   - Localize-Swift (1.1.2)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
-  - Firebase
-  - Firebase/AdMob
+  - Google-Mobile-Ads-SDK (~> 7.42)
   - Localize-Swift (~> 1.1)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Google-Mobile-Ads-SDK
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - Localize-Swift
+    - nanopb
+
 SPEC CHECKSUMS:
-  Firebase: 6d4012da1598732a2b43f16d8355eca90f94ed59
-  FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
-  FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
-  Google-Mobile-Ads-SDK: 3c2a6656117989469bfe7645640aa1de024a4c6c
-  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
-  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
-  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  Google-Mobile-Ads-SDK: e911f5544fc6488f8372a183627a802c8bdb5e36
+  GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
+  GoogleUtilities: 273e67030e0de313e7304f6dcfa96fc5214f6c23
   Localize-Swift: 584bcde9c6b13fcccb1333f398a46a0e60735e7a
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: fbfac5c12a91c11c2cb3ae342b8b676e74cf7dc7
+PODFILE CHECKSUM: 3538688cbe854dc3f6b94b586fd3d7759a39e8e8
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.7.0.beta.3

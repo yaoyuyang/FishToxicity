@@ -4,7 +4,6 @@ platform :ios, '9.0'
 
 target 'FishToxicity' do
   use_frameworks!
-  pod 'Firebase'
-  pod 'Firebase/AdMob'
+  pod 'Google-Mobile-Ads-SDK', '~>7.42'
   pod 'Localize-Swift', '~> 1.1'
 end

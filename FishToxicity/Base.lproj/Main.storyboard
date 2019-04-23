@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IaG-hF-C6J">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IaG-hF-C6J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Fish Detail-->
@@ -15,23 +18,23 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-JW-KRc">
-                                <rect key="frame" x="20" y="79" width="560" height="508"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-JW-KRc">
+                                <rect key="frame" x="20" y="72" width="335" height="575"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="145" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mvN-6j-GYp">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="278" placeholderIntrinsicHeight="145" text="Mercury Level" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="1Kg-a8-nGS">
-                                                <rect key="frame" x="0.0" y="0.0" width="278" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="100"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="least" translatesAutoresizingMaskIntoConstraints="NO" id="uZ0-yL-mvO">
-                                                <rect key="frame" x="283" y="0.0" width="277" height="100"/>
+                                                <rect key="frame" x="170" y="0.0" width="165" height="100"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -39,34 +42,36 @@
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Marlin" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-Zw-DTh">
-                                        <rect key="frame" x="0.0" y="115" width="560" height="320"/>
+                                        <rect key="frame" x="0.0" y="115" width="335" height="191.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bPO-Zw-DTh" secondAttribute="height" multiplier="7:4" id="DCd-li-iG3"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" text="Eating Guide: Eat three servings or less per month" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-de-2aL">
-                                        <rect key="frame" x="0.0" y="450" width="560" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="infinite" text="Eating Guide: Eat three servings or less per month" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-de-2aL">
+                                        <rect key="frame" x="0.0" y="321.5" width="335" height="166"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-qG-brO">
-                                        <rect key="frame" x="0.0" y="465" width="560" height="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-qG-brO">
+                                        <rect key="frame" x="0.0" y="502.5" width="335" height="43"/>
                                         <string key="text">*Eating guide based on a 6oz serving of cooked fish for a 130lb/60kg woman, source from NRDC: Consumer Guide to Mercury in Fish.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mercury conc data" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1g-VE-Vlp">
-                                        <rect key="frame" x="0.0" y="493" width="560" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercury conc data" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1g-VE-Vlp">
+                                        <rect key="frame" x="0.0" y="560.5" width="335" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="u1g-VE-Vlp" firstAttribute="top" relation="lessThanOrEqual" secondItem="bvC-qG-brO" secondAttribute="bottom" constant="5" id="10e-o1-2b7"/>
                                     <constraint firstItem="mvN-6j-GYp" firstAttribute="top" secondItem="zQe-JW-KRc" secondAttribute="top" id="43d-S5-Rh6"/>
                                     <constraint firstItem="mvN-6j-GYp" firstAttribute="leading" secondItem="zQe-JW-KRc" secondAttribute="leading" id="Hf6-2a-gGH"/>
                                     <constraint firstItem="mvN-6j-GYp" firstAttribute="top" secondItem="zQe-JW-KRc" secondAttribute="top" id="Pyv-eN-r6E"/>
+                                    <constraint firstItem="bvC-qG-brO" firstAttribute="firstBaseline" relation="lessThanOrEqual" secondItem="Bha-de-2aL" secondAttribute="baseline" constant="20" id="R0N-AQ-hKw"/>
                                     <constraint firstItem="Bha-de-2aL" firstAttribute="top" relation="lessThanOrEqual" secondItem="mvN-6j-GYp" secondAttribute="bottom" constant="5" id="sQf-na-qVj"/>
                                     <constraint firstAttribute="trailing" secondItem="mvN-6j-GYp" secondAttribute="trailing" id="w08-kA-ekh"/>
                                 </constraints>
@@ -80,10 +85,11 @@
                                 </variation>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zQe-JW-KRc" secondAttribute="bottom" constant="20" symbolic="YES" id="4xf-eL-wld"/>
                             <constraint firstItem="zQe-JW-KRc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="76s-ME-kgC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="u1g-VE-Vlp" secondAttribute="bottom" constant="60" id="BSP-uX-1Tv"/>
                             <constraint firstAttribute="trailing" secondItem="zQe-JW-KRc" secondAttribute="trailing" constant="20" symbolic="YES" id="Cth-zv-Z1m"/>
                             <constraint firstItem="zQe-JW-KRc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="D6P-Pl-DrL"/>
                             <constraint firstItem="zQe-JW-KRc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eah-zF-ELu"/>
@@ -123,35 +129,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="273"/>
+            <point key="canvasLocation" x="2596" y="272.11394302848578"/>
         </scene>
         <!--Fish Toxicity Level-->
         <scene sceneID="uo7-jP-OrO">
             <objects>
                 <tableViewController id="T1N-s1-wTu" customClass="FishTableViewController" customModule="FishToxicity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="3if-WY-olU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FishTableViewCell" rowHeight="60" id="YUA-JX-PDh" customClass="FishTableViewCell" customModule="FishToxicity" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="YUA-JX-PDh" id="BGI-HW-oGs">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="clW-Bn-0jf">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Butterfish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-cQ-Nbh">
                                             <rect key="frame" x="68" y="0.0" width="503" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moderate" translatesAutoresizingMaskIntoConstraints="NO" id="XBX-Ye-8vN">
                                             <rect key="frame" x="68" y="25" width="60" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -180,7 +189,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IaG-hF-C6J" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eK9-Qh-gHl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -198,7 +207,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FyN-QL-Nis" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ymf-3S-PMv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -212,10 +221,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Marlin" width="512" height="173"/>
-        <image name="defaultPhoto" width="540" height="540"/>
-        <image name="least" width="442" height="193"/>
-        <image name="moderate" width="442" height="193"/>
+        <image name="Marlin" width="307.20001220703125" height="104.09999847412109"/>
+        <image name="defaultPhoto" width="1080" height="1080"/>
+        <image name="least" width="212.39999389648438" height="92.639999389648438"/>
+        <image name="moderate" width="212.39999389648438" height="92.639999389648438"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dTg-HQ-5zN"/>

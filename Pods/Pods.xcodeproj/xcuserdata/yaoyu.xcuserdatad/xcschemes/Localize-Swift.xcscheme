@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4E3BBCA6078A6AAAD053C911572F0B0C"
+               BlueprintIdentifier = "340DDF7DB405EDF7F01580175FF090DF"
                BuildableName = "Localize_Swift.framework"
                BlueprintName = "Localize-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4E3BBCA6078A6AAAD053C911572F0B0C"
+            BlueprintIdentifier = "340DDF7DB405EDF7F01580175FF090DF"
             BuildableName = "Localize_Swift.framework"
             BlueprintName = "Localize-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">

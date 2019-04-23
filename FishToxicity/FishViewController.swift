@@ -17,8 +17,8 @@ class FishViewController: UIViewController {
     @IBOutlet weak var eatingGuide: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
     @IBOutlet weak var concData: UILabel!
+    var bannerView: GADBannerView!
 
-    
     /*
     This value is passed by `FishTableViewController` in `prepareForSegue(_:sender:)`
     */
@@ -39,6 +39,8 @@ class FishViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        addBannerViewToView(bannerView)
         // Set up views if editing an existing Meal.
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FishViewController.handleSwipes(_:)))
         rightSwipe.direction = .right
@@ -51,9 +53,9 @@ class FishViewController: UIViewController {
             ratingImage.image = UIImage(named: ratingImageNames[fish.level])!
             concData.text = "Mercury concentration mean: ".localized() + fish.conc!.description + " PPM, according to FDA: Mercury Levels in Commercial Fish and Shellfish (1990-2010). ".localized()
         }
-//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-//        bannerView.rootViewController = self
-//        bannerView.loadRequest(GADRequest())
+        bannerView.adUnitID = "ca-app-pub-1494190819778945/8661449578"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +77,56 @@ class FishViewController: UIViewController {
             navigationController!.popViewController(animated: true)
         }
     }
-
-
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        if #available(iOS 11.0, *) {
+            // In iOS 11, we need to constrain the view to the safe area.
+            positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
+        }
+        else {
+            // In lower iOS versions, safe area is not available so we use
+            // bottom layout guide and view edges.
+            positionBannerViewFullWidthAtBottomOfView(bannerView)
+        }
+    }
+    
+    // MARK: - view positioning
+    @available (iOS 11, *)
+    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
+        // Position the banner. Stick it to the bottom of the Safe Area.
+        // Make it constrained to the edges of the safe area.
+        let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+            guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+            guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+            ])
+    }
+    
+    func positionBannerViewFullWidthAtBottomOfView(_ bannerView: UIView) {
+        view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                              attribute: .leading,
+                                              relatedBy: .equal,
+                                              toItem: view,
+                                              attribute: .leading,
+                                              multiplier: 1,
+                                              constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                              attribute: .trailing,
+                                              relatedBy: .equal,
+                                              toItem: view,
+                                              attribute: .trailing,
+                                              multiplier: 1,
+                                              constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                              attribute: .bottom,
+                                              relatedBy: .equal,
+                                              toItem: bottomLayoutGuide,
+                                              attribute: .top,
+                                              multiplier: 1,
+                                              constant: 0))
+    }
 }
 

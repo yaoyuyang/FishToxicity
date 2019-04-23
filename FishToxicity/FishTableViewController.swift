@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import Localize_Swift
 //import SwiftCSV
 
-class FishTableViewController: UITableViewController, UISearchResultsUpdating, GADInterstitialDelegate {
+class FishTableViewController: UITableViewController, UISearchResultsUpdating {
 
     // MARK: Properties
 
@@ -19,14 +18,9 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
     var filteredFishes = [Fish]()
     var resultSearchController = UISearchController()
     let ratingImageNames: [String] = ["least", "moderate", "high", "highest"]
-    var timer = 5
-    
-    // Google Ad
-    var interstitial: GADInterstitial!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = createAndLoadInterstitial()
 
         // Load the fish data.
         let defaults = UserDefaults.standard
@@ -83,10 +77,10 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
                                 }
                                 
                                 // Store the value into the values array
-                                values.append(value as! String)
+                                values.append(value! as String)
                                 
                                 // Retrieve the unscanned remainder of the string
-                                if textScanner.scanLocation < textScanner.string.characters.count {
+                                if textScanner.scanLocation < textScanner.string.count {
                                     textToScan = (textScanner.string as NSString).substring(from: textScanner.scanLocation + 1)
                                     
                                 } else {
@@ -100,7 +94,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
                         } else  {
                             values = line.components(separatedBy: delimiter)
                         }
-//                        print(values)
+                        print(values)
                         if values.count < keys.count {
                             values.append("")
                         }
@@ -251,25 +245,8 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
             }
             fishDetailViewController.fish = selectedFish
         }
-        print(timer)
-        if interstitial.isReady && timer == 5 {
-            interstitial.present(fromRootViewController: self)
-            timer = 0
-        }
-        timer = timer + 1
     }
-    
-    func createAndLoadInterstitial() -> GADInterstitial {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-        return interstitial
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial!) {
-        interstitial = createAndLoadInterstitial()
-    }
-    
+
     func saveFishes() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(fishes, toFile: Fish.ArchiveURL.path)
         if !isSuccessfulSave {

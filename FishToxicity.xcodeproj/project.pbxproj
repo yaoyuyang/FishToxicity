@@ -20,9 +20,6 @@
 		6DEC12CB1C0423AB00E719A8 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC12CA1C0423AB00E719A8 /* Fish.swift */; };
 		6DEC12CC1C0423AB00E719A8 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC12CA1C0423AB00E719A8 /* Fish.swift */; };
 		6DEC12CE1C04327F00E719A8 /* FishTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEC12CD1C04327F00E719A8 /* FishTableViewController.swift */; };
-		6DF81E4E1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */; };
-		6DF81E4F1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */; };
-		6DF81E501CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */; };
 		6DF81E571CF10D71005BB820 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DF81E591CF10D71005BB820 /* Localizable.strings */; };
 		D8E9181ECBBC87ED19847AA9 /* Pods_FishToxicity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F942B4A400D2EF2452D7C /* Pods_FishToxicity.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +62,6 @@
 		6DE91AF31C574D2D00F28076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DEC12CA1C0423AB00E719A8 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		6DEC12CD1C04327F00E719A8 /* FishTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishTableViewController.swift; sourceTree = "<group>"; };
-		6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6DF81E511CF10485005BB820 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6DF81E521CF10485005BB820 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6DF81E531CF1048C005BB820 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -157,7 +153,6 @@
 				6DEC12CA1C0423AB00E719A8 /* Fish.swift */,
 				6DE31D6F1C030AD50007E50E /* Assets.xcassets */,
 				6DE31D711C030AD50007E50E /* LaunchScreen.storyboard */,
-				6DF81E4D1CF0D8BE005BB820 /* GoogleService-Info.plist */,
 				6DE31D741C030AD50007E50E /* Info.plist */,
 			);
 			path = FishToxicity;
@@ -189,12 +184,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DE31D821C030AD50007E50E /* Build configuration list for PBXNativeTarget "FishToxicity" */;
 			buildPhases = (
+				630084561E815B0B8FA948F4 /* [CP] Check Pods Manifest.lock */,
 				A92BE9C204D59DCF5D722176 /* 📦 Check Pods Manifest.lock */,
 				6DE31D611C030AD50007E50E /* Sources */,
 				6DE31D621C030AD50007E50E /* Frameworks */,
 				6DE31D631C030AD50007E50E /* Resources */,
 				97D1359B36A62029FCBF2164 /* 📦 Embed Pods Frameworks */,
-				60F0108D10078008FA4119C4 /* 📦 Copy Pods Resources */,
+				78E9FA21A70E5F6C46B34273 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,7 +295,6 @@
 				6DE31D731C030AD50007E50E /* LaunchScreen.storyboard in Resources */,
 				6DF81E571CF10D71005BB820 /* Localizable.strings in Resources */,
 				6DE31D701C030AD50007E50E /* Assets.xcassets in Resources */,
-				6DF81E4E1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */,
 				6D67070E1C128886004B1DB2 /* fishdata.csv in Resources */,
 				6DE31D6E1C030AD50007E50E /* Main.storyboard in Resources */,
 			);
@@ -309,7 +304,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF81E4F1CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,26 +311,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF81E501CF0D8BE005BB820 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		60F0108D10078008FA4119C4 /* 📦 Copy Pods Resources */ = {
+		630084561E815B0B8FA948F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FishToxicity-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78E9FA21A70E5F6C46B34273 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FishToxicity/Pods-FishToxicity-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FishToxicity/Pods-FishToxicity-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FishToxicity/Pods-FishToxicity-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97D1359B36A62029FCBF2164 /* 📦 Embed Pods Frameworks */ = {
