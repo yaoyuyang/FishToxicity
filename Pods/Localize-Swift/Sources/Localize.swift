@@ -59,13 +59,7 @@ public extension String {
      - Returns: The localized string.
      */
     func localized() -> String {
-        if let path = Bundle.main.path(forResource: Localize.currentLanguage(), ofType: "lproj"), let bundle = Bundle(path: path) {
-            return bundle.localizedString(forKey: self, value: nil, table: nil)
-        }
-        else if let path = Bundle.main.path(forResource: LCLBaseBundle, ofType: "lproj"), let bundle = Bundle(path: path) {
-            return bundle.localizedString(forKey: self, value: nil, table: nil)
-        }
-        return self
+        return localized(using: nil, in: .main)
     }
 
     /**
@@ -98,8 +92,13 @@ open class Localize: NSObject {
      List available languages
      - Returns: Array of available languages.
      */
-    open class func availableLanguages() -> [String] {
-        return Bundle.main.localizations
+    open class func availableLanguages(_ excludeBase: Bool = false) -> [String] {
+        var availableLanguages = Bundle.main.localizations
+        // If excludeBase = true, don't include "Base" in available languages
+        if let indexOfBase = availableLanguages.index(of: "Base") , excludeBase == true {
+            availableLanguages.remove(at: indexOfBase)
+        }
+        return availableLanguages
     }
     
     /**
@@ -158,8 +157,8 @@ open class Localize: NSObject {
      - Returns: The localized string.
      */
     open class func displayNameForLanguage(_ language: String) -> String {
-        let locale : Locale = Locale(identifier: currentLanguage())
-        if let displayName = (locale as NSLocale).displayName(forKey: NSLocale.Key.languageCode, value: language) {
+        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage())
+        if let displayName = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return displayName
         }
         return String()
