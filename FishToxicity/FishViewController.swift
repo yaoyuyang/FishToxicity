@@ -24,15 +24,15 @@ class FishViewController: UIViewController {
     */
     
     var fish: Fish?
-    let singleAttribute1 = [ NSForegroundColorAttributeName: UIColor.green ]
-    let singleAttribute2 = [ NSBackgroundColorAttributeName: UIColor.yellow ]
-    let singleAttribute3 = [ NSUnderlineStyleAttributeName: NSUnderlineStyle.styleDouble.rawValue ]
+    let singleAttribute1 = [ NSAttributedString.Key.foregroundColor: UIColor.green ]
+    let singleAttribute2 = [ NSAttributedString.Key.backgroundColor: UIColor.yellow ]
+    let singleAttribute3 = [ NSAttributedString.Key.underlineStyle: NSUnderlineStyle.double.rawValue ]
     
     let fishToxicGuide: [NSAttributedString] = [
-        NSAttributedString(string: "LEAST MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 88/255, green: 152/255, blue: 42/255, alpha: 1) ]),
-        NSAttributedString(string: "MODERATE MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 234/255, green: 203/255, blue: 0/255, alpha: 1) ]),
-        NSAttributedString(string: "HIGH MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 255/255, green: 171/255, blue: 28/255, alpha: 1) ]),
-        NSAttributedString(string: "HIGHEST MERCURY".localized(), attributes: [ NSForegroundColorAttributeName: UIColor(red: 254/255, green: 72/255, blue: 25/255, alpha: 1) ])
+        NSAttributedString(string: "LEAST MERCURY".localized(), attributes: [ NSAttributedString.Key.foregroundColor: UIColor(red: 88/255, green: 152/255, blue: 42/255, alpha: 1) ]),
+        NSAttributedString(string: "MODERATE MERCURY".localized(), attributes: [ NSAttributedString.Key.foregroundColor: UIColor(red: 234/255, green: 203/255, blue: 0/255, alpha: 1) ]),
+        NSAttributedString(string: "HIGH MERCURY".localized(), attributes: [ NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 171/255, blue: 28/255, alpha: 1) ]),
+        NSAttributedString(string: "HIGHEST MERCURY".localized(), attributes: [ NSAttributedString.Key.foregroundColor: UIColor(red: 254/255, green: 72/255, blue: 25/255, alpha: 1) ])
     ]
     let eatingGuideText: [String] = ["Enjoy this fish.*".localized(), "Eat six servings or less per month.*".localized(), "Eat three servings or less per month!*".localized(), "Avoid eating!*".localized()]
     let ratingImageNames: [String] = ["least", "moderate", "high", "highest"]
@@ -72,7 +72,7 @@ class FishViewController: UIViewController {
         
     }
     
-    func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
         if (sender.direction == .right) {
             navigationController!.popViewController(animated: true)
         }
