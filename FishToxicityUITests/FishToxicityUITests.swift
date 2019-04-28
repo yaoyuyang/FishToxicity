@@ -43,9 +43,6 @@ class FishToxicityUITests: XCTestCase {
         app.buttons["Cancel"].tap()
         tablesQuery.staticTexts["Bluefish"].tap()
         snapshot("2Show")
-        
-        
-        
     }
     
 }

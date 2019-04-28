@@ -42,7 +42,16 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
         self.resultSearchController.dimsBackgroundDuringPresentation = false
         self.resultSearchController.searchBar.sizeToFit()
 
-        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        if #available(iOS 11.0, *) {
+            // For iOS 11 and later, place the search bar in the navigation bar.
+            self.navigationItem.searchController = self.resultSearchController
+            
+            // Make the search bar always visible.
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            // For iOS 10 and earlier, place the search controller's search bar in the table view's header.
+            self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        }
 
         self.tableView.reloadData()
     }
@@ -184,11 +193,15 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     func updateSearchResults(for searchController: UISearchController) {
-        filteredFishes.removeAll(keepingCapacity: false)
 
-        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (fishes as NSArray).filtered(using: searchPredicate)
-        filteredFishes = array as! [Fish]
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            filteredFishes = fishes.filter { fish in
+                return fish.name.lowercased().contains(searchText.lowercased())
+            }
+            
+        } else {
+            filteredFishes = fishes
+        }
 
         self.tableView.reloadData()
     }

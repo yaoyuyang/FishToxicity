@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IaG-hF-C6J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IaG-hF-C6J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -221,10 +221,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Marlin" width="307.20001220703125" height="104.09999847412109"/>
-        <image name="defaultPhoto" width="1080" height="1080"/>
-        <image name="least" width="212.39999389648438" height="92.639999389648438"/>
-        <image name="moderate" width="212.39999389648438" height="92.639999389648438"/>
+        <image name="Marlin" width="512" height="173.5"/>
+        <image name="defaultPhoto" width="540" height="540"/>
+        <image name="least" width="442.5" height="193"/>
+        <image name="moderate" width="442.5" height="193"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dTg-HQ-5zN"/>

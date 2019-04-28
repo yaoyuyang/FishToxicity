@@ -55,6 +55,8 @@ class FishViewController: UIViewController {
         }
         bannerView.adUnitID = "ca-app-pub-1494190819778945/8661449578"
         bannerView.rootViewController = self
+        let adRequest = GADRequest()
+        adRequest.testDevices = [ kGADSimulatorID]
         bannerView.load(GADRequest())
     }
 
