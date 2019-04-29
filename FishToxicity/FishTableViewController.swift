@@ -42,6 +42,9 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating {
         self.resultSearchController.dimsBackgroundDuringPresentation = false
         self.resultSearchController.searchBar.sizeToFit()
 
+        // set UI test tag
+        self.resultSearchController.searchBar.accessibilityIdentifier = "search-bar"
+
         if #available(iOS 11.0, *) {
             // For iOS 11 and later, place the search bar in the navigation bar.
             self.navigationItem.searchController = self.resultSearchController
