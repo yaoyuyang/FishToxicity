@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "340DDF7DB405EDF7F01580175FF090DF"
-               BuildableName = "Localize_Swift.framework"
-               BlueprintName = "Localize-Swift"
-               ReferencedContainer = "container:Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -28,7 +12,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6DE91AEE1C574D2D00F28076"
+               BuildableName = "FishToxicityUITests.xctest"
+               BlueprintName = "FishToxicityUITests"
+               ReferencedContainer = "container:FishToxicity.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6DE31D641C030AD50007E50E"
+            BuildableName = "FishToxicity.app"
+            BlueprintName = "FishToxicity"
+            ReferencedContainer = "container:FishToxicity.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +45,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "340DDF7DB405EDF7F01580175FF090DF"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize-Swift"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "6DE31D641C030AD50007E50E"
+            BuildableName = "FishToxicity.app"
+            BlueprintName = "FishToxicity"
+            ReferencedContainer = "container:FishToxicity.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +64,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6DE31D641C030AD50007E50E"
+            BuildableName = "FishToxicity.app"
+            BlueprintName = "FishToxicity"
+            ReferencedContainer = "container:FishToxicity.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

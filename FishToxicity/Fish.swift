@@ -18,8 +18,8 @@ class Fish: NSObject, NSCoding {
 
     // MARK: Archiving Paths
 
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("fishes")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("fishes")
 
     // MARK: Types
 
@@ -48,18 +48,18 @@ class Fish: NSObject, NSCoding {
     }
 
     // MARK: NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
-        aCoder.encodeObject(photo, forKey: PropertyKey.photoKey)
-        aCoder.encodeInteger(level, forKey: PropertyKey.levelKey)
-        aCoder.encodeFloat(conc!, forKey: PropertyKey.concKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.nameKey)
+        aCoder.encode(photo, forKey: PropertyKey.photoKey)
+        aCoder.encode(level, forKey: PropertyKey.levelKey)
+        aCoder.encode(conc!, forKey: PropertyKey.concKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
-        let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
-        let level = aDecoder.decodeIntegerForKey(PropertyKey.levelKey)
-        let conc = aDecoder.decodeFloatForKey(PropertyKey.concKey)
+        let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as! String
+        let photo = aDecoder.decodeObject(forKey: PropertyKey.photoKey) as? UIImage
+        let level = aDecoder.decodeInteger(forKey: PropertyKey.levelKey)
+        let conc = aDecoder.decodeFloat(forKey: PropertyKey.concKey)
         // Must call designated initilizer.
         self.init(name: name, photo: photo, level: level, conc: conc)
     }

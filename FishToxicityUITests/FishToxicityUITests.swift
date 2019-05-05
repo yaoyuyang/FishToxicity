@@ -37,15 +37,13 @@ class FishToxicityUITests: XCTestCase {
         
         let app = XCUIApplication()
         let tablesQuery = app.tables
-        tablesQuery.searchFields["Search"].tap()
-        app.searchFields["Search"].typeText("blue")
+        let searchBarElement = app.otherElements["search-bar"]
+        searchBarElement.tap()
+        searchBarElement.typeText("blue")
         snapshot("1Search")
         app.buttons["Cancel"].tap()
         tablesQuery.staticTexts["Bluefish"].tap()
         snapshot("2Show")
-        
-        
-        
     }
     
 }

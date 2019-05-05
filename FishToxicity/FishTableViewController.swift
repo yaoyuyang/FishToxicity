@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import Localize_Swift
 //import SwiftCSV
 
-class FishTableViewController: UITableViewController, UISearchResultsUpdating, GADInterstitialDelegate {
+class FishTableViewController: UITableViewController, UISearchResultsUpdating {
 
     // MARK: Properties
 
@@ -19,22 +18,17 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
     var filteredFishes = [Fish]()
     var resultSearchController = UISearchController()
     let ratingImageNames: [String] = ["least", "moderate", "high", "highest"]
-    var timer = 5
-    
-    // Google Ad
-    var interstitial: GADInterstitial!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = createAndLoadInterstitial()
 
         // Load the fish data.
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(false, forKey: "isPreloaded")
-        let isPreloaded = defaults.boolForKey("isPreloaded")
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: "isPreloaded")
+        let isPreloaded = defaults.bool(forKey: "isPreloaded")
         if !isPreloaded {
             preloadFish()
-            defaults.setBool(true, forKey: "isPreloaded")
+            defaults.set(true, forKey: "isPreloaded")
             print("PreloadFish")
         } else {
             if let saveFishes = loadFishes() {
@@ -48,66 +42,78 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
         self.resultSearchController.dimsBackgroundDuringPresentation = false
         self.resultSearchController.searchBar.sizeToFit()
 
-        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        // set UI test tag
+        self.resultSearchController.searchBar.accessibilityIdentifier = "search-bar"
+
+        if #available(iOS 11.0, *) {
+            // For iOS 11 and later, place the search bar in the navigation bar.
+            self.navigationItem.searchController = self.resultSearchController
+            
+            // Make the search bar always visible.
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            // For iOS 10 and earlier, place the search controller's search bar in the table view's header.
+            self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        }
 
         self.tableView.reloadData()
     }
     
-    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [Dictionary<String, String>]? {
+    func parseCSV (_ contentsOfURL: URL, encoding: String.Encoding, error: NSErrorPointer) -> [Dictionary<String, String>]? {
         // Load the CSV file and parse it
         let delimiter = ","
-        var items = [[String:String]]?()
-        if let data = NSData(contentsOfURL: contentsOfURL) {
-            if let content = NSString(data: data, encoding: NSUTF8StringEncoding) {
+        var items: [[String:String]]?
+        if let data = try? Data(contentsOf: contentsOfURL) {
+            if let content = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                 items = []
-                let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
-                let keys = lines[0].componentsSeparatedByString(delimiter)
+                let lines:[String] = content.components(separatedBy: CharacterSet.newlines) as [String]
+                let keys = lines[0].components(separatedBy: delimiter)
                 
                 for line in lines[1..<lines.count] {
                     var values:[String] = []
                     if line != "" {
                         // For a line with double quotes
                         // we use NSScanner to perform the parsing
-                        if line.rangeOfString("\"") != nil {
+                        if line.range(of: "\"") != nil {
                             var textToScan:String = line
                             var value:NSString?
-                            var textScanner:NSScanner = NSScanner(string: textToScan)
+                            var textScanner:Scanner = Scanner(string: textToScan)
                             while textScanner.string != "" {
                             
-                                if (textScanner.string as NSString).substringToIndex(1) == "\"" {
+                                if (textScanner.string as NSString).substring(to: 1) == "\"" {
                                     textScanner.scanLocation += 1
-                                    textScanner.scanUpToString("\"", intoString: &value)
+                                    textScanner.scanUpTo("\"", into: &value)
                                     textScanner.scanLocation += 1
                                 } else {
-                                    textScanner.scanUpToString(delimiter, intoString: &value)
+                                    textScanner.scanUpTo(delimiter, into: &value)
                                 }
                                 
                                 // Store the value into the values array
-                                values.append(value as! String)
+                                values.append(value! as String)
                                 
                                 // Retrieve the unscanned remainder of the string
-                                if textScanner.scanLocation < textScanner.string.characters.count {
-                                    textToScan = (textScanner.string as NSString).substringFromIndex(textScanner.scanLocation + 1)
+                                if textScanner.scanLocation < textScanner.string.count {
+                                    textToScan = (textScanner.string as NSString).substring(from: textScanner.scanLocation + 1)
                                     
                                 } else {
                                     textToScan = ""
                                 }
-                                textScanner = NSScanner(string: textToScan)
+                                textScanner = Scanner(string: textToScan)
                             }
                             
                             // For a line without double quotes, we can simply separate the string
                             // by using the delimiter (e.g. comma)
                         } else  {
-                            values = line.componentsSeparatedByString(delimiter)
+                            values = line.components(separatedBy: delimiter)
                         }
-//                        print(values)
+
                         if values.count < keys.count {
                             values.append("")
                         }
                         
                         // Put the values into the tuple and add it to the items array
                         var item = [String: String]()
-                        for (index, key) in keys.enumerate() {
+                        for (index, key) in keys.enumerated() {
                             item[key] = values[index]
                         }
                         items?.append(item)
@@ -120,7 +126,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
     
     func preloadFish() {
         // Retrieve data from the source file
-        if let contentsOfURL = NSBundle.mainBundle().URLForResource("fishdata", withExtension: "csv") {
+        if let contentsOfURL = Bundle.main.url(forResource: "fishdata", withExtension: "csv") {
             
             print("preprocessing")
             // Remove all the menu items before preloading
@@ -128,7 +134,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
             
             var error:NSError?
             
-            if let processedItems = parseCSV(contentsOfURL, encoding: NSUTF8StringEncoding, error: &error) {
+            if let processedItems = parseCSV(contentsOfURL, encoding: String.Encoding.utf8, error: &error) {
                 for processedItem in processedItems {
 //                    print(processedItem)
                     let newFish = Fish(name: processedItem["name"]!.localized(), photo: UIImage(named: processedItem["photo"]!), level: Int(processedItem["level"]!)!, conc: Float(processedItem["concentration"]!))!
@@ -139,7 +145,7 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
         
         }
         
-        fishes.sortInPlace({ $0.name < $1.name })
+        fishes.sort(by: { $0.name < $1.name })
         saveFishes()
     }
 
@@ -150,14 +156,14 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if (self.resultSearchController.active) {
+        if (self.resultSearchController.isActive) {
             return self.filteredFishes.count
         } else {
             return fishes.count
@@ -165,14 +171,14 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "FishTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! FishTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FishTableViewCell
 
         var aFish = fishes[indexPath.row]
 
-        if (self.resultSearchController.active) {
+        if (self.resultSearchController.isActive) {
             aFish = filteredFishes[indexPath.row]
         } else {
             aFish = fishes[indexPath.row]
@@ -189,12 +195,16 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
         return cell
     }
 
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filteredFishes.removeAll(keepCapacity: false)
+    func updateSearchResults(for searchController: UISearchController) {
 
-        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (fishes as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredFishes = array as! [Fish]
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            filteredFishes = fishes.filter { fish in
+                return fish.name.lowercased().contains(searchText.lowercased())
+            }
+            
+        } else {
+            filteredFishes = fishes
+        }
 
         self.tableView.reloadData()
     }
@@ -238,53 +248,36 @@ class FishTableViewController: UITableViewController, UISearchResultsUpdating, G
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let fishDetailViewController = segue.destinationViewController as! FishViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let fishDetailViewController = segue.destination as! FishViewController
         // Get the cell that generated this segue.
         if let selectedFishCell = sender as? FishTableViewCell {
             var selectedFish: Fish?
-            let indexPath = tableView.indexPathForCell(selectedFishCell)!
-            if (self.resultSearchController.active) {
+            let indexPath = tableView.indexPath(for: selectedFishCell)!
+            if (self.resultSearchController.isActive) {
                 selectedFish = filteredFishes[indexPath.row]
             } else {
                 selectedFish = fishes[indexPath.row]
             }
             fishDetailViewController.fish = selectedFish
         }
-        print(timer)
-        if interstitial.isReady && timer == 5 {
-            interstitial.presentFromRootViewController(self)
-            timer = 0
-        }
-        timer = timer + 1
     }
-    
-    func createAndLoadInterstitial() -> GADInterstitial {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        interstitial.delegate = self
-        interstitial.loadRequest(GADRequest())
-        return interstitial
-    }
-    
-    func interstitialDidDismissScreen(ad: GADInterstitial!) {
-        interstitial = createAndLoadInterstitial()
-    }
-    
+
     func saveFishes() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(fishes, toFile: Fish.ArchiveURL.path!)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(fishes, toFile: Fish.ArchiveURL.path)
         if !isSuccessfulSave {
             print("Failed to save meals...")
         }
     }
     func loadFishes() -> [Fish]? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Fish.ArchiveURL.path!) as? [Fish]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Fish.ArchiveURL.path) as? [Fish]
     }
     
     // clear the records in Archive
     func removeFishes() {
         fishes = [Fish]()
         saveFishes()
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isPreloaded")
+        UserDefaults.standard.set(false, forKey: "isPreloaded")
         print("Fishes removed")
     }
 
