@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="2596" y="272.11394302848578"/>
         </scene>
-        <!--Fish Toxicity Level-->
+        <!--Seafood Mercury Level-->
         <scene sceneID="uo7-jP-OrO">
             <objects>
                 <tableViewController id="T1N-s1-wTu" customClass="FishTableViewController" customModule="FishToxicity" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,7 +177,7 @@
                             <outlet property="delegate" destination="T1N-s1-wTu" id="vSI-Kz-9py"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Fish Toxicity Level" id="loP-7A-4G1"/>
+                    <navigationItem key="navigationItem" title="Seafood Mercury Level" id="loP-7A-4G1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMH-vE-AWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
